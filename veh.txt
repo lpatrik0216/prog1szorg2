@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class vehicle {
+public:
+	string rendszam;
+	string type;
+	string marka;
+	int age;
+};
+
+int main()
+{
+	vehicle car[5] = {
+		{"MPL-006", "Focus", "Ford", 2001},
+		{"BXV-008", "X1", "BMW", 2012},
+		{"HES-913", "A6", "Audi", 2011},
+		{"KAE-231", "Civic", "Honda", 1991},
+		{"CAE-001", "Fiesta", "Ford", 2005}
+	};
+	string rsz;
+	cout << "Keresett jármű rendszáma:";  cin >> rsz;
+	cout << endl << endl;
+	bool isCorrect = false;
+	for (int i = 0; i < 5; i++) {
+		if (car[i].rendszam == rsz) {
+			cout << "Márka:" << car[i].marka << endl << "Típus:" << car[i].type << endl << "Rendszám:" << car[i].rendszam << endl << "Évjárat:" << car[i].age;
+			isCorrect = true;
+		}
+	}
+	if (isCorrect == false) cerr << "A keresett rendszám nem található!";
+	cout << endl << endl;
+
+}
